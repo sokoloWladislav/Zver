@@ -15,12 +15,10 @@ namespace BuisnessLogicLevel.Servicies
     {
         private ApplicationContext db;
         private ApplicationUserManager userManager;
-        private ApplicationRoleManager roleManager;
         public UserService(string connectionString)
         {
             db = new ApplicationContext(connectionString);
             userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(db));
-            roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(db));
         }
         public async Task<ClaimsIdentity> Authenticate(UserTransferModel userBle)
         {

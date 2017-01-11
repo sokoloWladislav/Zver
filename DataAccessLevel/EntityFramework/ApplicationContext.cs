@@ -11,7 +11,11 @@ namespace DataAccessLevel.EntityFramework
 {
     public class ApplicationContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationContext(string conectionString) : base(conectionString) { }
+        public ApplicationContext(string conectionString)
+            : base(conectionString)
+        {
+            Database.SetInitializer<ApplicationContext>(new AppDbInitializer());
+        }
 
         public DbSet<Request> Requests { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
