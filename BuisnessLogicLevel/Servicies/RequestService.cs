@@ -4,10 +4,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BuisnessLogicLevel.Interfaces;
+using BuisnessLogicLevel.Infrastructure;
+using DataAccessLevel.EntityFramework;
+using DataAccessLevel.Interfaces;
+using DataAccessLevel.Repositories;
+using Models.Entities;
 
 namespace BuisnessLogicLevel.Servicies
 {
     public class RequestService : IRequestService
     {
+        private ApplicationContext db;
+        private IRepository<Request> requestRepository;
+
+        public RequestService(string conectionString)
+        {
+            db = new ApplicationContext(conectionString);
+            requestRepository = new RequestRepository(db);
+        }
+
+        public OperationDetails CreateRequest(Request model)
+        {
+            var request = requestRepository.Get(model.Id);
+            if(request == null)
+            {
+                requestRepository.Create(model);
+                db.SaveChanges();
+                return new OperationDetails
+                {
+                    Success = true,
+                    Property = "",
+                    Message = ""
+                };
+            }
+            return new OperationDetails
+            {
+                Success = false,
+                Property = "Id",
+                Message = "the request with such id already exists"
+            };
+        }
+
+        /*public OperationDetails DeleteRequest(Request model)
+        {
+            Request request = requestRepository.Get(model.Id);
+            if(request != null)
+            {
+                requestRepository.Delete(model.Id);
+
+            }
+            
+        }
+        OperationDetails UpdateRequest(Request model);
+        List<Request> GetAllRequests();*/
     }
 }

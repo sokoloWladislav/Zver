@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLevel.Entities
+namespace Models.Entities
 {
     public class Feedback
     {

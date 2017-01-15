@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace DataAccessLevel.Entities
+namespace Models.Entities
 {
-    public class ApplicationUser : IdentityUser
+    public class ApplicationRole : IdentityRole
     {
-
     }
 }

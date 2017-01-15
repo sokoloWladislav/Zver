@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using DataAccessLevel.Entities;
+using Models.Entities;
 
 namespace DataAccessLevel.EntityFramework
 {

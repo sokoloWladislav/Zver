@@ -58,9 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuisnessLogicEntities\FeedbackTransferModel.cs" />
-    <Compile Include="BuisnessLogicEntities\RequestTransferModel.cs" />
-    <Compile Include="BuisnessLogicEntities\UserTransferModel.cs" />
+    <Compile Include="Infrastructure\OperationDetails.cs" />
+    <Compile Include="Infrastructure\UserModel.cs" />
     <Compile Include="Interfaces\IFeedbackService.cs" />
     <Compile Include="Interfaces\IRequestService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
@@ -73,6 +72,10 @@
     <ProjectReference Include="..\DataAccessLevel\DataAccessLevel.csproj">
       <Project>{b0d6b4df-5754-4b4e-a113-b08a663dbaec}</Project>
       <Name>DataAccessLevel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{99cd59cc-c4dd-4f81-827e-bd799b3fcfbf}</Project>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

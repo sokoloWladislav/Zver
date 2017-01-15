@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Claims;
-using BuisnessLogicLevel.BuisnessLogicEntities;
+using Models.Entities;
+using BuisnessLogicLevel.Infrastructure;
 
 namespace BuisnessLogicLevel.Interfaces
 {
     public interface IUserService
     {
-        Task<ClaimsIdentity> Authenticate(UserTransferModel user);
+        Task<ClaimsIdentity> Authenticate(UserModel user);
     }
 }

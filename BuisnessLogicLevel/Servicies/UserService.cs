@@ -4,9 +4,9 @@ using DataAccessLevel.EntityFramework;
 using DataAccessLevel.Identity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using DataAccessLevel.Entities;
 using System.Security.Claims;
-using BuisnessLogicLevel.BuisnessLogicEntities;
+using Models.Entities;
+using BuisnessLogicLevel.Infrastructure;
 
 
 namespace BuisnessLogicLevel.Servicies
@@ -20,10 +20,10 @@ namespace BuisnessLogicLevel.Servicies
             db = new ApplicationContext(connectionString);
             userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(db));
         }
-        public async Task<ClaimsIdentity> Authenticate(UserTransferModel userBle)
+        public async Task<ClaimsIdentity> Authenticate(UserModel userModel)
         {
             ClaimsIdentity claim = null;
-            ApplicationUser user = await userManager.FindAsync(userBle.Email, userBle.Password);
+            ApplicationUser user = await userManager.FindAsync(userModel.Email, userModel.Password);
             if (user != null)
             {
                 claim = await userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);

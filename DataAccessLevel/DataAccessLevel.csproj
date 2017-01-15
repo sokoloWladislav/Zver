@@ -58,16 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\ApplicationRole.cs" />
-    <Compile Include="Entities\ApplicationUser.cs" />
-    <Compile Include="Entities\Feedback.cs" />
-    <Compile Include="Entities\Request.cs" />
     <Compile Include="EntityFramework\AppDbInitializer.cs" />
     <Compile Include="EntityFramework\ApplicationContext.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
-    <Compile Include="Interfaces\IFeedbackRepository.cs" />
-    <Compile Include="Interfaces\IRequestRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\FeedbackRepository.cs" />
     <Compile Include="Repositories\RequestRepository.cs" />
@@ -75,6 +70,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{99cd59cc-c4dd-4f81-827e-bd799b3fcfbf}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

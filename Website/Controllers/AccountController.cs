@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Security.Claims;
-using BuisnessLogicLevel.BuisnessLogicEntities;
+using Models.Entities;
 using BuisnessLogicLevel.Interfaces;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Website.Models;
+using BuisnessLogicLevel.Infrastructure;
 
 namespace Website.Controllers
 {
@@ -41,7 +42,7 @@ namespace Website.Controllers
         {
             if (ModelState.IsValid)
             {
-                UserTransferModel user = new UserTransferModel { Email = model.Email, Password = model.Password };
+                UserModel user = new UserModel { Email = model.Email, Password = model.Password };
                 ClaimsIdentity claim = await userService.Authenticate(user);
                 if (claim == null)
                 {

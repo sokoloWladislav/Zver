@@ -7,7 +7,7 @@ using BuisnessLogicLevel.Interfaces;
 
 namespace BuisnessLogicLevel.Servicies
 {
-    public class FeedbackService : IFeedbackService
+    public class FeedbackService
     {
     }
 }

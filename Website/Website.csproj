@@ -184,6 +184,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\1.png" />
+    <Content Include="Content\images\2.png" />
+    <Content Include="Content\images\3.png" />
+    <Content Include="Content\images\4.png" />
+    <Content Include="Content\images\5.png" />
+    <Content Include="Content\images\6.png" />
+    <Content Include="Content\images\zver.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -282,6 +289,10 @@
     <ProjectReference Include="..\BuisnessLogicLevel\BuisnessLogicLevel.csproj">
       <Project>{c1f25db6-25b1-42a4-8fd2-d0a2d426da63}</Project>
       <Name>BuisnessLogicLevel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{99cd59cc-c4dd-4f81-827e-bd799b3fcfbf}</Project>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

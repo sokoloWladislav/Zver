@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuisnessLogicLevel.BuisnessLogicEntities
+namespace BuisnessLogicLevel.Infrastructure
 {
-    public class UserTransferModel
+    public class UserModel
     {
         public string Id { get; set; }
+
         public string Email { get; set; }
+
         public string Password { get; set; }
     }
 }

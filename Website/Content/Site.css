@@ -1,61 +1,158 @@
-﻿body {
-    font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
-}
-
-header, footer, nav, section {
+﻿header, footer, nav, section {
     display: block;
 }
 
-
-/* Styles for basic forms
------------------------------------------------------------*/
-fieldset {
-    border: 1px solid #ddd;
-    padding: 0 1.4em 1.4em 1.4em;
-    margin: 0 0 1.5em 0;
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Source Sans Pro",sans-serif;
 }
 
-legend {
-    font-size: 1.2em;
+#header-container {
+    background: url("../Content/images/zver.png") 50% 0 no-repeat fixed;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%;
+    height: 700px;
+    font-family: "futura-pt";
+    color: white;
+}
+
+#logo-name {
+    font-size: 80px;
+    margin-left: 80px;
+    padding-top: 20px;
+    float: left;
+    cursor: default;
+}
+
+#nav-menu {
+    padding-top: 58px;
+    float: right;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 100px;
+}
+
+#nav-menu ul{
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1em;
+}
+
+#nav-menu li {
+    padding-right: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#nav-menu li:hover {
+    color: #FFEFD5;
+}
+
+#uslugi {
+    margin-bottom: 77px;
+}
+
+#uslugi-content {
+    padding-left: 22%;
+    font-size: 15px;
+}
+
+#uslugi h1 
+{
+    padding-left: 17px;
+    padding-bottom: 17px;
+    font-size: 42px;
     font-weight: bold;
+    margin: 0;
+    padding-left: 22%;
+    padding-bottom: 30px;
+    padding-top: 80px;
 }
 
-textarea {
-    min-height: 75px;
+#uslugi p {
+    font-size: 15px;
+    line-height: 26px;
+    letter-spacing: .5px;
+    font-weight: 400;
+    font-style: normal;
+    width: 690px;
 }
 
-.editor-label {
-    margin: 1em 0 0 0;
+#prices-container {
+    margin-left: 22%;
 }
 
-.editor-field {
-    margin: 0.5em 0 0 0;
+.price-row {
+    width: 19%;
+    float: left;
+    height: 450px;
+    margin-right: 4px;
+    min-width: 200px;
+    max-width: 300px;
 }
 
-
-/* Styles for validation helpers
------------------------------------------------------------*/
-.field-validation-error {
-    color: #f00;
+.last-row {
+    margin: 0px;
 }
 
-.field-validation-valid {
-    display: none;
+.img-price {
+    width: 200px;
+    height: 200px;
+    
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%;
+    margin-bottom: 20px;
 }
 
-.input-validation-error {
-    border: 1px solid #f00;
-    background-color: #fee;
+#img-1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
 }
 
-.validation-summary-errors {
-    font-weight: bold;
-    color: #f00;
+#img-2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
 }
 
-.validation-summary-valid {
-    display: none;
+#img-3 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+#img-4 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+#img-5 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+#img-6 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+.price-text {
+    color: white;
+    position: relative;
+    font-size: 20px;
+}
+
+.cleaner {
+    clear: both;
 }
