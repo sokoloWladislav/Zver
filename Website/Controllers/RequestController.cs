@@ -3,33 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Website.Models;
 using BuisnessLogicLevel.Interfaces;
 using BuisnessLogicLevel.Servicies;
 using Models.Entities;
 
 namespace Website.Controllers
 {
-    public class HomeController : Controller
+    [Authorize]
+    public class RequestController : Controller
     {
         private IRequestService requestService;
 
-        public HomeController(IRequestService service)
+        public RequestController(IRequestService service)
         {
             requestService = service;
         }
 
         public ActionResult Index()
         {
-            return View();
+            var requests = requestService.GetAllRequests();
+            return View(requests);
         }
 
-        [HttpPost]
-        public ActionResult CreateRequest(Request model)
+        /*public ActionResult DeleteRequest()
         {
-            requestService.CreateRequest(model);
-            return new EmptyResult();
-        }
 
+        }*/
     }
 }

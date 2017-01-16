@@ -7,20 +7,32 @@
   <head>
       <meta charset="utf-8" />
       <title>Белый Диплом</title>
-      <link rel="stylesheet" href="~/Content/Site.css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="~/Content/Site.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-      <div id="header-container" data-type="background">
+      <div id="header-container">
           <div id="logo-name">Белый Диплом</div>
           <div id="nav-menu">
               <ul>
-                  <li>Услуги</li>
-                  <li>Цены</li>
-                  <li>Заказать</li>
-                  <li>Отзывы</li>
-                  <li>Контакты</li>
+                  <li><a href="#uslugi">Услуги</a></li>
+                  <li><a href="#prices-container">Цены</a></li>
+                  <li><a href="#request-container">Заказать</a></li>
+                  <li><a href="#contact-container">Отзывы</a></li>
+                  <li><a href="#contact-container">Контакты</a></li>
+                  
               </ul>
+              @if (User.Identity.IsAuthenticated)
+              {
+                <div id="extraLinks">
+                    @Html.ActionLink("Запросы", "Index", "Request")
+                    @Html.ActionLink("Log out", "Logout", "Account")
+                </div>
+              }
           </div>
+          
           <div class="cleaner"></div>
       </div>
       <div id="uslugi">
@@ -37,35 +49,139 @@
           <div class="price-row">
               <div class="img-price">
                   <img id="img-1" src="~/Content/images/1.png"/>
-                  <div class="price-text">Помощь в написании контрольной работы с практическими заданиями - 40 р.</div>
+                  <div class="price-text">Помощь в написании контрольной работы с практическими заданиями</div>
+                  <div id="price-number-1">40р</div>
               </div>
               <div class="img-price" >
                   <img id="img-2" src="~/Content/images/2.png" />
-                  <div class="price-text">Помощь в написании реферата - 30 р.</div>
+                  <div class="price-text">Помощь в написании реферата</div>
+                  <div id="price-number-2">30р</div>
               </div>
           </div>
           <div class="price-row">
               <div class="img-price">
-                  <img id="img-1" src="~/Content/images/3.png" />
-                  <div class="price-text">Помощь в написании курсовой работы с данными предприятия, организации, банка - 85 р.</div>
+                  <img id="img-3" src="~/Content/images/3.png" />
+                  <div class="price-text">Помощь в написании курсовой работы с данными предприятия, организации, банка</div>
+                  <div id="price-number-3">85р</div>
               </div>
               <div  class="img-price">
                   <img id="img-4" src="~/Content/images/4.png" />
-                  <div class="price-text">Помощь в написании отчета по практике - 95 р.</div>
+                  <div class="price-text">Помощь в написании отчета по практике</div>
+                  <div id="price-number-4">95р</div>
               </div>
           </div>
           <div class="price-row last-row">
               <div class="img-price">
                   <img id="img-5" src="~/Content/images/5.png" />
-                  <div class="price-text">Помощь в написании дипломной работы с презентацией и докладом - 380 р.</div>
+                  <div class="price-text">Помощь в написании дипломной работы с презентацией и докладом</div>
+                  <div id="price-number-5">380р</div>
               </div>
               <div class="img-price">
                   <img id="img-6" src="~/Content/images/6.png" />
-                  <div class="price-text">Рецензия на работу, доклады, презентации в MS PowerPoint , прохождение нормоконтроля - от 15 р.</div>
+                  <div class="price-text">Рецензия на работу, доклады, презентации в MS PowerPoint , прохождение нормоконтроля</div>
+                  <div id="price-number-6">15р</div>
               </div>
           </div>
           <div class="cleaner"></div>
       </div>
+      <div id="request-container" data-type="background">
+          <button id="request-button">Заказать</button>
+      </div>
+      <div class="modal fade" id="request-modal" role="dialog">
+          <div class="modal-dialog modal-lg">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Заказать работу</h4>
+                  </div>
+                  <div class="modal-body">
+
+                      <form class="form-horizontal" role="form">
+                          <div class="form-group">
+                              <label class="col-sm-2 control-label"
+                                     for="inputFullName">Полное имя</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control"
+                                         id="inputFullName" placeholder="Полное имя" />
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 control-label"
+                                     for="inputEmail">Email</label>
+                              <div class="col-sm-10">
+                                  <input type="email" class="form-control"
+                                         id="inputEmail" placeholder="Email" />
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 control-label"
+                                     for="inputRequest">Вид работы</label>
+                              <div class="col-sm-10">
+                                  <input type="email" class="form-control"
+                                         id="inputRequest" placeholder="Вид работы" />
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="message-text" class="form-control-label">Описание:</label>
+                              <textarea class="form-control" id="message-text"></textarea>
+                          </div>
+                      </form>
+                  </div>
+
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default"
+                              data-dismiss="modal">
+                          Закрыть
+                      </button>
+                      <button id="createRequestButton" type="button" class="btn btn-primary">
+                          Отправить заявку
+                      </button>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <div id="contact-container">
+          <h1>Отзыв</h1>
+          <div role="form" id="feedback-form">
+              <form>
+                  <div class="form-group">
+                      <input type="text" class="form-control" id="feedbackFullName" placeholder="Полное имя">
+                  </div>
+                  <div class="form-group">
+                      <input type="email" class="form-control" id="feedbackEmail" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                      <textarea type="text" class="form-control" id="feedbackMessage" placeholder="Отзыв"></textarea>
+                  </div>
+                  <button id="createFeedbackButton" type="button" class="btn btn-primary">
+                      Отправить заявку
+                  </button>
+              </form>
+          </div>
+          <aside>
+              <p>
+                  Вы можете оставить отзыв о проделанной работе 
+                  или связаться с нами напрямую
+              </p>
+              <p>
+                  ИП "Александр Белый"
+              </p>
+              <p>
+                  email: belysasha@tut.by
+              </p>
+              <p>
+                  vk: https://vk.com/ia_zver
+              </p>
+              <p>
+                  skype: zver_fanipol
+              </p>
+          </aside>
+      </div>
+      <script type="text/javascript" src="~/Scripts/bootstrapper.js"></script>
   </body>
 </html>
 

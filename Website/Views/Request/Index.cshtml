@@ -1,0 +1,22 @@
+﻿@model List<Models.Entities.Request>
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Запросы</title>
+    <link rel="stylesheet" href="~/Content/Site.css" />
+</head>
+<body>
+    <h2>Запросы</h2>
+    @foreach (var item in Model)
+    {
+        <section>
+            <p class="user">@item.UserName @item.Contact</p>
+            <p>@item.Question</p>
+        </section>
+    }
+</body>
+</html>
+
+    

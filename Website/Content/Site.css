@@ -14,7 +14,7 @@ body {
     -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100%; /* Opera 9.6+ */
     background-size: 100%;
-    height: 700px;
+    height: 500px;
     font-family: "futura-pt";
     color: white;
 }
@@ -49,7 +49,18 @@ body {
     cursor: pointer;
 }
 
-#nav-menu li:hover {
+#nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+#extraLinks a {
+    padding-right: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#nav-menu a:hover {
     color: #FFEFD5;
 }
 
@@ -58,7 +69,7 @@ body {
 }
 
 #uslugi-content {
-    padding-left: 22%;
+    padding-left: 27%;
     font-size: 15px;
 }
 
@@ -69,7 +80,7 @@ body {
     font-size: 42px;
     font-weight: bold;
     margin: 0;
-    padding-left: 22%;
+    padding-left: 27%;
     padding-bottom: 30px;
     padding-top: 80px;
 }
@@ -84,7 +95,8 @@ body {
 }
 
 #prices-container {
-    margin-left: 22%;
+    margin-left: 27%;
+    margin-bottom: 55px;
 }
 
 .price-row {
@@ -109,6 +121,7 @@ body {
     -o-background-size: 100%; /* Opera 9.6+ */
     background-size: 100%;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 #img-1 {
@@ -149,10 +162,151 @@ body {
 
 .price-text {
     color: white;
+    top: 15px;
     position: relative;
-    font-size: 20px;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+}
+
+#price-number-1 {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    top: 58px;
+}
+
+#price-number-2 {
+    position: relative;
+    top: 82px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+#price-number-3 {
+    position: relative;
+    top: 35px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+#price-number-4 {
+    position: relative;
+    top: 82px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+#price-number-5 {
+    position: relative;
+    top: 58px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+#price-number-6 {
+    position: relative;
+    top: 32px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+#request-container {
+    background: url("../Content/images/background2.jpg") 50% 0 no-repeat fixed;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%;
+    height: 605px;
+    text-align: center;
+}
+
+#request-button {
+    background-clip: border-box;
+    background-color: black;
+    background-image: none;
+    background-origin: padding-box;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: block;
+    height: 110px;
+    position: relative;
+    top: 275px;
+    left: 35%;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.3s, 0.3s;
+    transition-property: transform, background-color;
+    transition-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+    width: 480px;
+    color: white;
+    font-size: 40px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#request-button:hover {
+    opacity: 1;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#contact-container {
+    height: 400px;
+    margin-left: 400px;
+    margin-top: 200px;
+}
+
+#contact-container aside {
+    float: left;
+    width: 200px;
+    margin-left: 20px;
+}
+
+
+#feedback-form {
+    width: 400px;
+    float: left;
+    text-align: center;
 }
 
 .cleaner {
     clear: both;
+}
+
+section {
+	display: block;
+	margin: 20px auto;
+	width:80%;
+}
+
+section > .user {
+	
+	border:none;
+	padding: 2px;
+	font-weight: bold;
+	width:70%;
+	box-shadow: none;
+}
+
+section p {
+	border:solid 1.5px;
+	border-radius: 5px;
+	padding: 10px 25px;
+	box-shadow: 5px 5px 5px 0px rgba(155,155,155,0.6);
+}
+
+.user:hover {
+	text-decoration:underline;	
 }

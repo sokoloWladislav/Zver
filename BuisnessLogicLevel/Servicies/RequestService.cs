@@ -45,17 +45,34 @@ namespace BuisnessLogicLevel.Servicies
             };
         }
 
-        /*public OperationDetails DeleteRequest(Request model)
+        public OperationDetails DeleteRequest(Request model)
         {
             Request request = requestRepository.Get(model.Id);
             if(request != null)
             {
                 requestRepository.Delete(model.Id);
-
+                db.SaveChanges();
+                return new OperationDetails
+                {
+                    Success = true,
+                    Property = "",
+                    Message = ""
+                };
             }
-            
+            else
+            {
+                return new OperationDetails
+                {
+                    Success = false,
+                    Property = "Id",
+                    Message = "Request to delete is not exist in database"
+                };
+            }
         }
-        OperationDetails UpdateRequest(Request model);
-        List<Request> GetAllRequests();*/
+
+        public List<Request> GetAllRequests()
+        {
+            return db.Requests.ToList();
+        }
     }
 }

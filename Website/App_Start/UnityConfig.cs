@@ -26,6 +26,7 @@ namespace Website.App_Start
         {
             string connectionString = "DefaultConnection";
             container.RegisterType<IUserService, UserService>(new InjectionFactory(c => new UserService(connectionString)));
+            container.RegisterType<IRequestService, RequestService>(new InjectionFactory(c => new RequestService(connectionString)));
         }
     }
 }
