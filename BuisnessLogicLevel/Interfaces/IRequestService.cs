@@ -11,7 +11,7 @@ namespace BuisnessLogicLevel.Interfaces
     public interface IRequestService
     {
         OperationDetails CreateRequest(Request model);
-        OperationDetails DeleteRequest(Request model);
+        OperationDetails DeleteRequest(int id);
         List<Request> GetAllRequests();
     }
 }

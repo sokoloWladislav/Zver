@@ -25,9 +25,10 @@ namespace Website.Controllers
             return View(requests);
         }
 
-        /*public ActionResult DeleteRequest()
+        public ActionResult DeleteRequest(int id)
         {
-
-        }*/
+            requestService.DeleteRequest(id);
+            return RedirectToAction("Index");
+        }
     }
 }

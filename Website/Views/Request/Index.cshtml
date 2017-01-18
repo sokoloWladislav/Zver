@@ -13,7 +13,7 @@
     {
         <section>
             <p class="user">@item.UserName @item.Contact</p>
-            <p>@item.Question</p>
+            <div class="request-container"><p>@item.Question</p> @Html.ActionLink("Удалить", "DeleteRequest", new { id = item.Id }, new { @class = "delete-request-link" })</div>
         </section>
     }
 </body>

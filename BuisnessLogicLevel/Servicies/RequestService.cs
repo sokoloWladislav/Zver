@@ -45,12 +45,12 @@ namespace BuisnessLogicLevel.Servicies
             };
         }
 
-        public OperationDetails DeleteRequest(Request model)
+        public OperationDetails DeleteRequest(int id)
         {
-            Request request = requestRepository.Get(model.Id);
+            Request request = requestRepository.Get(id);
             if(request != null)
             {
-                requestRepository.Delete(model.Id);
+                requestRepository.Delete(id);
                 db.SaveChanges();
                 return new OperationDetails
                 {

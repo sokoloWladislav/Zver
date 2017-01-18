@@ -14,7 +14,7 @@ namespace DataAccessLevel.EntityFramework
         public ApplicationContext(string conectionString)
             : base(conectionString)
         {
-
+            //Database.SetInitializer<ApplicationContext>(new AppDbInitializer());
         }
 
         public DbSet<Request> Requests { get; set; }
