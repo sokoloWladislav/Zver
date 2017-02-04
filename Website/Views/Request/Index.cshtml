@@ -5,7 +5,6 @@
 <head>
     <meta charset="utf-8" />
     <title>Запросы</title>
-    <link rel="stylesheet" href="~/Content/Site.css" />
 </head>
 <body>
     <h2>Запросы</h2>
@@ -16,6 +15,7 @@
             <div class="request-container"><p>@item.Question</p> @Html.ActionLink("Удалить", "DeleteRequest", new { id = item.Id }, new { @class = "delete-request-link" })</div>
         </section>
     }
+    @Styles.Render("~/Content/css")
 </body>
 </html>
 

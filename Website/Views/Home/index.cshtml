@@ -7,10 +7,6 @@
   <head>
       <meta charset="utf-8" />
       <title>Белый Диплом</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link rel="stylesheet" href="~/Content/Site.css" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
       <div id="header-container">
@@ -171,17 +167,23 @@
                   ИП Белый А.В.
               </p>
               <p>
+                УНП: 691612573
+              </p>
+              <p>
                   <img src="~/Content/images/email-envelope.png"/> belysasha@tut.by
               </p>
               <p>
-                  <img src="~/Content/images/social-vk.png"/> https://vk.com/ia_zver
+                  <img src="~/Content/images/social-vk.png"/> vk.com/ia_zver
               </p>
               <p>
                   <img src="~/Content/images/social-skype.png"/> zver_fanipol
               </p>
           </aside>
       </div>
-      <script type="text/javascript" src="~/Scripts/bootstrapper.js"></script>
+      @Styles.Render("~/Content/bootstrap")
+      @Styles.Render("~/Content/css")
+      @Scripts.Render("~/bundles/jquery-bootstrap")
+      @Scripts.Render("~/bundles/boot")
   </body>
 </html>
 

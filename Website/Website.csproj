@@ -186,6 +186,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\images\1.png" />
     <Content Include="Content\images\2.png" />
     <Content Include="Content\images\3.png" />
@@ -199,7 +200,9 @@
     <Content Include="Content\images\zver.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrapper.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
